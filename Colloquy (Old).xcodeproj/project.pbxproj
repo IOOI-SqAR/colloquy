@@ -180,6 +180,8 @@
 		1CF8030F070C893500C9B54C /* libsilcclient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF8030D070C893500C9B54C /* libsilcclient.framework */; };
 		1CF80310070C894100C9B54C /* libsilc.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF8030C070C893500C9B54C /* libsilc.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1CF80311070C894100C9B54C /* libsilcclient.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF8030D070C893500C9B54C /* libsilcclient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4650B1402F1C7FB2001E316F /* ChatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B290706529E720066197C /* ChatCore.framework */; };
+		4650B1412F1C7FB2001E316F /* ChatCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B290706529E720066197C /* ChatCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55F7D7D22127844100CED413 /* NSDateAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9220565D11018298005CD72D /* NSDateAdditions.m */; };
 		891E8467123F0AEF00EC3C0F /* NSCharacterSetAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E8466123F0AEF00EC3C0F /* NSCharacterSetAdditions.m */; };
 		891EF3D1106426CB00CCEA35 /* PFMoveApplicationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891EF3D0106426CB00CCEA35 /* PFMoveApplicationController.m */; };
@@ -196,7 +198,6 @@
 		C236F65C1BDCE8E400E64469 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C236F6551BDCE81200E64469 /* InfoPlist.strings */; };
 		C236F65D1BDCE8E600E64469 /* schema.strings in Resources */ = {isa = PBXBuildFile; fileRef = C236F6581BDCE81F00E64469 /* schema.strings */; };
 		C237FECA1CA2EA9B00CB8C69 /* autoHeaderTemplate.pdf in Resources */ = {isa = PBXBuildFile; fileRef = C237FEC91CA2EA9B00CB8C69 /* autoHeaderTemplate.pdf */; };
-		C25750D41F64194F008AE623 /* ChatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B290706529E720066197C /* ChatCore.framework */; };
 		C25750D51F641958008AE623 /* ChatCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B290706529E720066197C /* ChatCore.framework */; };
 		C25750D61F64195B008AE623 /* ChatCore.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B290706529E720066197C /* ChatCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C25750D81F64209D008AE623 /* MASPreferences.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C25750D71F64209D008AE623 /* MASPreferences.framework */; };
@@ -332,6 +333,17 @@
 			files = (
 			);
 			name = "Copy Plugins";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4650B1422F1C7FB2001E316F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4650B1412F1C7FB2001E316F /* ChatCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -874,7 +886,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C25750D41F64194F008AE623 /* ChatCore.framework in Frameworks */,
+				4650B1402F1C7FB2001E316F /* ChatCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1512,6 +1524,7 @@
 			buildPhases = (
 				1C51B4C6052DE14B00BB459B /* Sources */,
 				1C51B4C8052DE14B00BB459B /* Frameworks */,
+				4650B1422F1C7FB2001E316F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2437,6 +2450,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PREFIX_HEADER = Basic.pch;
 				INFOPLIST_FILE = "Mac-Old/StandardCommands/Info-StandardCommands.plist";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "info.colloquy.standard-commands";
 				PRODUCT_NAME = "Standard Commands";
 				WRAPPER_EXTENSION = plugin;
@@ -2479,7 +2493,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C21296FF1F6465FC00555EE3 /* Base.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				COLLOQUY_WORKSPACE_ROOT = "$(SRCROOT)";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -2491,6 +2508,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PREFIX_HEADER = Basic.pch;
 				INFOPLIST_FILE = "Mac-Old/StandardCommands/Info-StandardCommands.plist";
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "info.colloquy.standard-commands";
 				PRODUCT_NAME = "Standard Commands";
 				WRAPPER_EXTENSION = plugin;
@@ -2539,7 +2557,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C21296FF1F6465FC00555EE3 /* Base.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				COLLOQUY_WORKSPACE_ROOT = "$(SRCROOT)";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				SDKROOT = macosx;
 			};
 			name = Release;

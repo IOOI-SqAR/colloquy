@@ -1,18 +1,18 @@
 [submodule "Carthage/Checkouts/CocoaAsyncSocket"]
 	path = Carthage/Checkouts/CocoaAsyncSocket
-	url = ssh://git@github.com/colloquy/CocoaAsyncSocket.git
+	url = ssh://git@github.com/IOOI-SqAR/CocoaAsyncSocket.git
 [submodule "Carthage/Checkouts/TCMPortMapper"]
 	path = Carthage/Checkouts/TCMPortMapper
-	url = ssh://git@github.com/monkeydom/TCMPortMapper.git
+	url = ssh://git@github.com/IOOI-SqAR/TCMPortMapper.git
 [submodule "Carthage/Checkouts/KissXML"]
 	path = Carthage/Checkouts/KissXML
-	url = ssh://git@github.com/colloquy/KissXML.git
+	url = ssh://git@github.com/IOOI-SqAR/KissXML.git
 [submodule "Carthage/Checkouts/XMPPFramework"]
 	path = Carthage/Checkouts/XMPPFramework
-	url = ssh://git@github.com/colloquy/XMPPFramework.git
+	url = ssh://git@github.com/IOOI-SqAR/XMPPFramework.git
 [submodule "Carthage/Checkouts/libidn-framework"]
 	path = Carthage/Checkouts/libidn-framework
-	url = ssh://git@github.com/chrisballinger/libidn-framework.git
+	url = ssh://git@github.com/IOOI-SqAR/libidn-framework.git
 [submodule "Carthage/Checkouts/CocoaLumberjack"]
 	path = Carthage/Checkouts/CocoaLumberjack
 	url = ssh://git@github.com/CocoaLumberjack/CocoaLumberjack.git
